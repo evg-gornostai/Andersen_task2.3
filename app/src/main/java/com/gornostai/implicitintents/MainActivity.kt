@@ -3,7 +3,9 @@ package com.gornostai.implicitintents
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
+import android.view.KeyEvent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
@@ -30,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         binding.openWebsiteButton.setOnClickListener { openWebsite() }
 
         binding.shareTextButton.setOnClickListener { shareText() }
+
+        binding.takePictureButton.setOnClickListener { takePicture() }
 
     }
 
@@ -64,4 +68,10 @@ class MainActivity : AppCompatActivity() {
             .setText(txt)
             .startChooser();
     }
+
+    fun takePicture(){
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivity(cameraIntent)
+    }
+
 }
