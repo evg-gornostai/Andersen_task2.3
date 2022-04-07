@@ -18,6 +18,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val intent = getIntent()
+        val uri = intent.data
+        if (uri != null){
+            val uriStr = "URI: ${uri.toString()}"
+            binding.textUriMessage.text = uriStr
+        }
+
         binding.openLocationButton.setOnClickListener { openLocation() }
 
         binding.openWebsiteButton.setOnClickListener { openWebsite() }

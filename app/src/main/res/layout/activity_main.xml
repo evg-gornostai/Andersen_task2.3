@@ -46,4 +46,9 @@
         android:layout_marginBottom="24dp"
         android:text="@string/button_share" />
 
+    <TextView
+        android:id="@+id/text_uri_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
